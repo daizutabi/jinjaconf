@@ -11,7 +11,7 @@ import inspect
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from inspect import Signature
-from pathlib import Path  # noqa: F401
+from pathlib import Path  # noqa: TCH003
 from typing import TYPE_CHECKING, TypeGuard
 
 from .render import render
@@ -44,7 +44,7 @@ class BaseConfig(Renderable):
 
     """
 
-    _template_: str = ""
+    _template_: str | Path = ""
 
     @classmethod
     def update(cls, cfg: Self) -> None:
